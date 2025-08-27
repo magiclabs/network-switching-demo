@@ -2,12 +2,7 @@
 
 import { EVMExtension } from "@magic-ext/evm";
 import { SolanaExtension } from "@magic-ext/solana";
-import {
-  InstanceWithExtensions,
-  Magic,
-  MagicSDKExtensionsOption,
-  SDKBase,
-} from "magic-sdk";
+import { InstanceWithExtensions, Magic, SDKBase } from "magic-sdk";
 import { useEffect, useMemo, useState } from "react";
 import { createWalletClient, custom, publicActions } from "viem";
 
@@ -25,7 +20,7 @@ const customOptimismOptions = {
 export default function Home() {
   const [email, setEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [selectedChainId, setSelectedChainId] = useState<number>(1);
+  const [selectedChainId, setSelectedChainId] = useState<number>(137);
   const [magic, setMagic] = useState<InstanceWithExtensions<
     SDKBase,
     (EVMExtension | SolanaExtension)[]
@@ -141,13 +136,13 @@ export default function Home() {
             className="bg-blue-500 text-white rounded-md p-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={handleGetEthNetwork}
           >
-            Get Eth Network
+            Get ETH Network
           </button>
           <button
             className="bg-blue-500 text-white rounded-md p-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={handleGetEthAddress}
           >
-            Get Eth Address
+            Get ETH Address
           </button>
           <button
             className="bg-blue-500 text-white rounded-md p-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
