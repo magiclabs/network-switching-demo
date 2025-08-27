@@ -71,7 +71,7 @@ export default function Home() {
     console.log(res);
   };
 
-  const handleGetEthNetwork = async () => {
+  const handleGetChainId = async () => {
     if (!walletClient) return;
     const chainId = await walletClient.getChainId();
     alert(chainId);
@@ -134,9 +134,9 @@ export default function Home() {
           </div>
           <button
             className="bg-blue-500 text-white rounded-md p-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-            onClick={handleGetEthNetwork}
+            onClick={handleGetChainId}
           >
-            Get ETH Network
+            Get Chain ID
           </button>
           <button
             className="bg-blue-500 text-white rounded-md p-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
